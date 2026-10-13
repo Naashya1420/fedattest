@@ -1,0 +1,31 @@
+{
+ "gpu_name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+ "gpu_memory_gb": 4.0,
+ "gpu_clock_mhz": 2100,
+ "gpu_memory_clock_mhz": 6001,
+ "gpu_sms": 20,
+ "gpu_cc": [
+  8,
+  6
+ ],
+ "gpu_cores": 2560,
+ "cpu_physical_cores": 14,
+ "cpu_max_mhz": 4700.0,
+ "cpu_core_order": [
+  4,
+  6,
+  0,
+  2,
+  8,
+  10,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "ram_gb": 15.22629165649414
+}

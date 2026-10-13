@@ -1,0 +1,54 @@
+# Experiment configuration (FedAvg on non-IID CIFAR-100, Dirichlet alpha = 0.3)
+
+[federation]
+num_clients        = 10
+rounds             = 20
+local_epochs       = 1
+batch_size         = 64
+lr                 = 0.05
+model_width        = 32      # ResNet-18 (CIFAR variant) at half width, 2.8 M params
+seed               = 0
+max_loader_workers = 8       # DataLoader workers = emulated core count (BouquetFL)
+server_location    = "India"
+
+[attack]
+start_round = 6              # clients are honest at enrolment, compromised at this round
+
+[[attack.clients]]
+id   = 3
+type = "data_poison"         # BadNets: 50% of local images stamped + relabelled to class 0
+rate = 0.5
+
+[[attack.clients]]
+id          = 7
+type        = "code_tamper"  # model-replacement backdoor: poisons half of each batch, boosts update x3
+boost       = 3.0
+poison_frac = 0.5
+
+# ---------------------------------------------------------------------------
+[scenarios.clean]                 # reference: nobody compromised
+attack  = false
+defense = "none"
+
+[scenarios.attack_nodefense]      # both attackers active, plain FedAvg (attestation only logged)
+attack  = true
+defense = "attestation_monitor_only"
+
+[scenarios.attack_attestation]    # attestation enforced: failing clients rejected + quarantined
+attack  = true
+defense = "attestation"
+
+[scenarios.remove_client3_only]   # effect of removing only the data-poisoning client
+attack  = true
+defense = "attestation"
+act_on  = [3]
+
+[scenarios.remove_client7_only]   # effect of removing only the code-tampering client
+attack  = true
+defense = "attestation"
+act_on  = [7]
+
+[scenarios.smoke]                 # quick end-to-end test
+attack       = true
+defense      = "attestation"
+attack_start = 2

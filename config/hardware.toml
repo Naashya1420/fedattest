@@ -1,0 +1,63 @@
+# Client hardware profiles, sampled with the BouquetFL Steam-survey sampler (seed=7).
+# Only hardware the host can emulate is eligible (<= host CUDA cores, clock, VRAM, CPU cores).
+
+[client_0]
+gpu      = "GeForce GTX 1650"
+cpu      = "Ryzen 5 5500GT"
+ram_gb   = 4
+location = "China"
+
+[client_1]
+gpu      = "GeForce GTX 1650"
+cpu      = "Ryzen 5 7535HS"
+ram_gb   = 8
+location = "Argentina"
+
+[client_2]
+gpu      = "GeForce GTX 1650"
+cpu      = "Ryzen 5 5500X3D"
+ram_gb   = 4
+location = "Canada"
+
+[client_3]
+gpu      = "GeForce GT 1030"
+cpu      = "Ryzen 7 7800X3D"
+ram_gb   = 4
+location = "Luxembourg"
+
+[client_4]
+gpu      = "GeForce GTX 1650"
+cpu      = "Ryzen 7 1700"
+ram_gb   = 8
+location = "Germany"
+
+[client_5]
+gpu      = "GeForce GTX 1050 Ti"
+cpu      = "Ryzen 5 5500"
+ram_gb   = 8
+location = "Japan"
+
+[client_6]
+gpu      = "GeForce GTX 1650"
+cpu      = "Ryzen 5 8400F"
+ram_gb   = 8
+location = "Australia"
+
+[client_7]
+gpu      = "GeForce GTX 1050 Ti"
+cpu      = "FX-6300"
+ram_gb   = 4
+location = "South Africa"
+
+[client_8]
+gpu      = "GeForce GTX 1650"
+cpu      = "Ryzen 7 8700G"
+ram_gb   = 8
+location = "Germany"
+
+[client_9]
+gpu      = "GeForce GTX 1050"
+cpu      = "Ryzen 7 6800H"
+ram_gb   = 8
+location = "Sweden"
+
